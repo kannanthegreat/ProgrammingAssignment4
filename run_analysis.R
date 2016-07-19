@@ -81,8 +81,13 @@
                                                                                                                           X_melt<- melt(X_mean_std,id.vars=c("subject","activity"))
                                                                                                                           Xav_tidy <- dcast(X_melt, subject + activity ~ ..., mean)
                                                                                                                         
-                                                                                                                                  ## Xav_tidy is now the tidy dataset required. Now return it and we're done
+                                                                                                                                  ## Xav_tidy is now the tidy dataset. 
                                                                                                                                 
-                                                                                                                                  return(Xav_tidy)
+                                                                                                                                  
+                                                                                                                                  ## Writing data set as a txt file created with write.table() using row.name=FALSE
+                                                                                                                                  
+                                                                                                                                  write.table(Xav_tidy, file="Xav_tidy.txt", row.name=FALSE, sep = "\t")
+                                                                                                                                  
+                                                                                                                                  return(Xav_tidy.txt)
                                                                                                                         
                                                                                                                                 }
